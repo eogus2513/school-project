@@ -8,7 +8,7 @@ WORKDIR /workspace/app
 COPY . .
 
 # 프로젝트를 빌드하여 실행 가능한 JAR 파일 생성
-RUN ./gradlew build -x test --profile --build-cache --parallel --configure-on-demand
+RUN ./gradlew build -x test --build-cache --parallel --configure-on-demand
 
 # 실행 단계에서 사용할 베이스 이미지 설정
 FROM eclipse-temurin:17-jre-focal as runner
