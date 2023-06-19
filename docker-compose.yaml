@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: project-server
+    restart: always
+    ports:
+      - '8080:8080'
+    depends_on:
+      - mysql
+    networks:
+      - network
+
+  mysql:
+    image: mysql:latest
+    platform: linux/amd64
+    container_name: project-mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=project
+      - TZ=Asia/Seoul
+    networks:
+      - network
+#    volumes:
+#      - ./mysql:/var/lib/mysql
+
+networks:
+  network:
+    driver: bridge
