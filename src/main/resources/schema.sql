@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS tbl_link
     title      VARCHAR(100)  NOT NULL,
     user_id    CHAR(36)      NOT NULL,
     created_at TIMESTAMP     NOT NULL,
-    expired_at TIMESTAMP     NOT NULL,
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+    expired_at TIMESTAMP     NOT NULL
+) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

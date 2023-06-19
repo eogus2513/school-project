@@ -1,8 +1,13 @@
 spring:
   r2dbc:
-    url: r2dbc:mysql://project-mysql:3306/project?serverTimezone=Asia/Seoul&useSSL=false
+    url: r2dbc:mysql://localhost:3306/project?serverTimezone=Asia/Seoul&useSSL=false
     username: root
     password: root
+
+  sql:
+    init:
+      schema-locations: classpath:/schema.sql
+      mode: always
 
 logging:
   level:
