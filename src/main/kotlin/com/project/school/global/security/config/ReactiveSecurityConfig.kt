@@ -24,7 +24,7 @@ class ReactiveSecurityConfig(
             addFilterAt(authenticationWebFilter, SecurityWebFiltersOrder.AUTHENTICATION)
 
             authorizeExchange {
-                authorize(anyExchange, permitAll)
+                authorize("/link/**", authenticated)
             }
         }
     }
